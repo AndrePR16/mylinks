@@ -1,21 +1,24 @@
 /* =============================================
-   MYLINKS - ESTILOS BASE
-   En las próximas clases construirás encima
-   de estos estilos para mejorar el diseño.
+   MYLINKS - RESPONSIVE MOBILE FIRST
    ============================================= */
 
-/* --- ESTILOS GLOBALES --- */
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* --- ESTILOS GLOBALES --- */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   background-color: #0f0f13;
-  color: WHITE;
+  color: white;
+
   min-height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,40 +28,120 @@ body {
 .card {
   width: 90%;
   max-width: 400px;
+
   text-align: center;
-  padding: 40px 20px;
+
+  padding: 2rem 1.25rem;
 }
 
 /* --- FOTO DE PERFIL --- */
 .avatar {
   border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
 }
 
 /* --- NOMBRE --- */
 .name {
-  font-size: 28px;
-  margin-top: 16px;
+  font-size: 1.75rem;
+  margin-top: 1rem;
 }
 
 /* --- BIO --- */
 .bio {
-  font-size: 15px;
+  font-size: 1rem;
   color: #a0a0b0;
-  margin-top: 8px;
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
 
 /* --- CONTENEDOR DE ENLACES --- */
 .links {
-  margin-top: 24px;
+  margin-top: 1.5rem;
 }
 
 /* --- CADA ENLACE --- */
 .link {
   display: block;
-  padding: 14px;
-  margin-top: 12px;
+  width: 100%;
+
+  padding: 0.9rem;
+  margin-top: 0.75rem;
+
   border: 1px solid #2a2a38;
+  border-radius: 0.5rem;
+
   color: #ffffff;
   text-decoration: none;
-  font-size: 15px;
+
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   RESPONSIVE: Tablets y Desktop (768px+)
+   ======================================== */
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 500px;
+  }
+
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .avatar {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .bio {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .link {
+    margin-top: 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .link:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* ========================================
+   EXTRA: Pantallas grandes (1200px+)
+   ======================================== */
+
+@media (min-width: 1200px) {
+  .card {
+    max-width: 600px;
+  }
+
+  .name {
+    font-size: 2.75rem;
+  }
+}
+
+/* ========================================
+   ORIENTACIÓN LANDSCAPE
+   ======================================== */
+
+@media (orientation: landscape) {
+  .card {
+    padding: 2.5rem;
+  }
+}
+
+/* ========================================
+   MODO OSCURO AUTOMÁTICO
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0f0f13;
+    color: white;
+  }
 }
